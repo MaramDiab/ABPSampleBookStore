@@ -1,0 +1,23 @@
+﻿@page
+@using Acme.BookStore.Localization
+@using Acme.BookStore.Web.Pages.Books
+@using Microsoft.Extensions.Localization
+@model IndexModel
+@inject IStringLocalizer<BookStoreResource> L
+@section scripts
+    {
+          @*  We will use the Datatables.net jQuery library to show the book list. 
+            Datatables library completely works via AJAX, it is fast, popular and provides a good user experience.*@
+         @* abp-script tag helper is used to add external scripts to the page*@
+    <abp-script src="/Pages/Books/Index.js" />
+}
+@*    abp-card is a tag helper for Twitter Bootstrap's card component. 
+    There are other useful tag helpers provided by the ABP Framework to easily use most of bootstrap's*@
+    <abp-card>
+        <abp-card-header>
+            <h2>@L["Books"]</h2>
+        </abp-card-header>
+        <abp-card-body>
+            <abp-table striped-rows="true" id="BooksTable"></abp-table>
+        </abp-card-body>
+    </abp-card>
