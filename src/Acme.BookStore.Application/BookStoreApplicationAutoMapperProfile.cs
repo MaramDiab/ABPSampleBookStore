@@ -12,6 +12,7 @@ public class BookStoreApplicationAutoMapperProfile : Profile
          * into multiple profile classes for a better organization. */
 
         CreateMap<Book, BookDto>();
+        CreateMap<BookDto, CreateUpdateBookDto>();
         CreateMap<CreateUpdateBookDto, Book>();
     }
 }
